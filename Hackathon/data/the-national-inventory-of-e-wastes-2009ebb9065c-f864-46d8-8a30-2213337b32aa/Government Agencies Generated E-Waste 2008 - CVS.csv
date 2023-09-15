@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128098889-1" type="text/plain" id="cookies_google_analytics_tracking_file"></script>
+<script type="text/plain" id="cookies_google_analytics_tracking_script">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-128098889-1", {"groups":"default","anonymize_ip":true,"page_path":"/403.html?page=" + document.location.pathname + document.location.search + "&from=" + document.referrer});</script>
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/themes/custom/inform_regional/favicon.ico" type="image/vnd.microsoft.icon" />
+<title>Access denied | Pacific Environment Data Portal </title>
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/ajax-progress.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/autocomplete-loading.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/fieldgroup.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/clearfix.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/details.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/hidden.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/item-list.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/nowrap.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/progress.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/resize.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/sticky-header.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-counter.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-counters.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-general-info.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tabledrag.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tablesort.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/core/modules/system/css/components/tree-child.module.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/libraries/cookiesjsr/dist/cookiesjsr.min.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/themes/custom/inform_base/assets/css/mmenu.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/themes/custom/inform_base/assets/css/inform_base.bootstrap.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/themes/custom/inform_base/assets/css/inform_base.style.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/themes/custom/inform_base/assets/css/inform_base.old.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/profiles/contrib/ekan/themes/ekan_theme/assets/css/ekan_icons.style.css?rzgqp7" />
+<link rel="stylesheet" media="all" href="/themes/custom/inform_regional/assets/css/inform_regional.style.css?rzgqp7" />
+</head>
+<body class="path-system">
+<a href="#main-content" class="visually-hidden focusable">
+Skip to main content
+</a>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+<div class="page">
+<div id="share-bar"></div>
+<nav id="main-navbar" class="navbar">
+<div class="container">
+<div id="branding">
+<div class="block block--inform-regional-sitebranding-2">
+<a href="/" class="navbar-brand" aria-label="Pacific Environment Data Portal ">
+<img id="site-logo" src="/themes/custom/inform_regional/logo.png" alt="Pacific Environment Data Portal  logo">
+<div class="site-name-wrapper">
+<span class="site-name">Pacific Environment Data Portal </span>
+<span class="site-slogan">Environmental Information for Decision Making</span>
+</div>
+</a>
+</div>
+</div>
+<button id="mobile-menu-toggler" class="navbar-toggler hamburger hamburger--spin" type="button" aria-label="Menu" aria-controls="navigation">
+<span class="hamburger-box">
+<span class="hamburger-inner"></span>
+</span>
+</button>
+<div id="secondary-menu">
+<div class="block block--inform-regional-useraccountmenu">
+<ul region="secondary_menu" class="nav navbar-nav">
+<li class="nav-item dropdown">
+<a href="/user/login" class="nav-link" data-drupal-link-system-path="user/login">Log in</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="main-menu">
+<div class="block block--inform-regional-mainnavigation">
+<ul region="main_menu" class="nav">
+<li class="nav-item  ">
+<a href="/search?f%5B0%5D=content_type%3Adataset" data-drupal-link-query="{&quot;f&quot;:[&quot;content_type:dataset&quot;]}" data-drupal-link-system-path="search">Datasets</a>
+</li>
+<li class="nav-item  ">
+<a href="/about" data-drupal-link-system-path="node/2">About</a>
+</li>
+<li class="nav-item  ">
+<a href="https://map.pacificdata.org/#share=s-fxrzvWs58kCtcQB7Kfc5l7OVqdO">Explore Spatial Data</a>
+</li>
+<li class="nav-item  ">
+<a href="/stories" data-drupal-link-system-path="stories">Stories</a>
+</li>
+<li class="nav-item  ">
+<a href="https://docs.pacific-data.sprep.org/docs/dataportal/quickstart">Docs</a>
+</li>
+<li class="nav-item  dropdown">
+<a href="/search?f%5B0%5D=content_type%3Adata%20dashboard" class="nav-link dropdown-toggle" data-drupal-link-query="{&quot;f&quot;:[&quot;content_type:data dashboard&quot;]}" data-drupal-link-system-path="search">Dashboards</a>
+<div class="dropdown-menu">
+<a href="/data-dashboard/gis-spatial-data-dashboard" class>GIS & SPATIAL</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<div id="content-header">
+<div class="overlay">
+<div class="container">
+<div id="block-inform-regional-breadcrumbs" class="block block-system block-system-breadcrumb-block">
+<nav aria-label="breadcrumb" class>
+<ol class="breadcrumb">
+<li class="home-link"><a href="/"><i class="fa fa fa-home" aria-hidden="true"></i><span> Home</span></a></li>
+<li class="breadcrumb-item ">
+<a href="/">Home</a>
+</li>
+</ol>
+</nav>
+</div>
+<div id="title-wrapper" class="row">
+<div class="col-md-4 col-lg-3 sidebar-top">&nbsp;</div>
+<div class="col-md-8 col-lg-9 text">
+<div class="node-info">
+<div id="block-inform-regional-page-title" class="block block-core block-page-title-block">
+<h1 class="display-4">Access denied</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<main class="pt-5 pb-5">
+<div class="container">
+<div class="page_main-content ">
+<div class="page__content main-content">
+<div data-drupal-messages-fallback class="hidden"></div><div id="block-inform-regional-mainpagecontent" class="block block-system block-system-main-block">
+You are not authorized to access this page.
+</div>
+<div id="block-cookiesui" class="block block-cookies block-cookies-ui-block">
+<div id="cookiesjsr"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer id="page-footer">
+<div class="motif-overlay"></div>
+<div class="container">
+<div class="sponsor-logos">
+<a class="gef logo" href="https://www.thegef.org//" target="blank">
+<img src="/themes/custom/inform_base/assets/images/gef-logo.png" title="Global Environment Facility" alt="Global Environment Facility Logo" />
+</a>
+<a class="enenvironment logo" href="https://www.unenvironment.org" target="blank">
+<img src="/themes/custom/inform_base/assets/images/unenvironment-logo.png" title="United Nations Environment Programme" alt="United Nations Environment Programme Logo" />
+</a>
+<a class="sprep logo" href="https://www.sprep.org" target="blank">
+<img src="/themes/custom/inform_base/assets/images/sprep-logo.png" title="Pacific Regional Environment Programme" alt="Pacific Regional Environment Programme Logo" />
+</a>
+<a class="inform logo" href="https://www.sprep.org/inform" target="blank">
+<img src="/themes/custom/inform_base/assets/images/inform-logo.png" title="Inform Project" alt="Inform Project Logo" />
+</a >
+<a class="spc logo" href="https://www.spc.int" target="blank">
+<img src="/themes/custom/inform_base/assets/images/spc-logo.png" title="Pacific Community" alt="SPC Logo" />
+</a >
+<a class="pdh logo" href="https://www.pacificdata.org" target="blank">
+<img src="/themes/custom/inform_base/assets/images/pdh-logo.png" title="Pacific Data Hub" alt="Pacific Data Hub Logo" />
+</a >
+<small class="copyright pull-left">
+<p>Supported by the SPREP Inform project.</p>
+</small>
+</div>
+</div>
+</footer>
+<div id="page--mobile-menu">
+<div class="block block--inform-regional-main-menu-off-canvas">
+<form method="GET" action="/search" class="mobile-search-bar">
+<input type="text" name="s" placeholder="Search" />
+<input class="submit" type="submit" value="&#xf002">
+</form>
+<ul region="mobile_menu" class="nav">
+<li class="nav-item ">
+<a href="/search?f%5B0%5D=content_type%3Adataset" data-drupal-link-query="{&quot;f&quot;:[&quot;content_type:dataset&quot;]}" data-drupal-link-system-path="search">Datasets</a>
+</li>
+<li class="nav-item ">
+<a href="/about" data-drupal-link-system-path="node/2">About</a>
+</li>
+<li class="nav-item ">
+<a href="https://map.pacificdata.org/#share=s-fxrzvWs58kCtcQB7Kfc5l7OVqdO">Explore Spatial Data</a>
+</li>
+<li class="nav-item ">
+<a href="/stories" data-drupal-link-system-path="stories">Stories</a>
+</li>
+<li class="nav-item ">
+<a href="https://docs.pacific-data.sprep.org/docs/dataportal/quickstart">Docs</a>
+</li>
+<li class="nav-item ">
+<span>Dashboards</span>
+<ul class="below">
+<li><a href="/data-dashboard/gis-spatial-data-dashboard" class>GIS & SPATIAL</a></li>
+</ul>
+</li>
+</ul>
+<div class="useraccount-side">
+<div class="block block--inform-regional-useraccountmenu-2">
+<ul region="navbar_branding" class="nav navbar-nav">
+<li class="nav-item dropdown">
+<a href="/user/login" class="nav-link" data-drupal-link-system-path="user/login">Log in</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"system\/files","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"file":"Govt%20Agencies%20generated%20e-waste%202008_2.csv"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"UA-128098889-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"cookiesjsr":{"config":{"cookie":{"name":"cookiesjsr","expires":31536000000,"domain":"","sameSite":"Lax","secure":false},"library":{"libBasePath":"https:\/\/cdn.jsdelivr.net\/gh\/jfeltkamp\/cookiesjsr@1\/dist","libPath":"https:\/\/cdn.jsdelivr.net\/gh\/jfeltkamp\/cookiesjsr@1\/dist\/cookiesjsr.min.js","scrollLimit":0},"callback":{"method":"post","url":"\/cookies\/consent\/callback.json","headers":[]},"interface":{"openSettingsHash":"#editCookieSettings","showDenyAll":true,"denyAllOnLayerClose":false,"settingsAsLink":false,"availableLangs":["en"],"defaultLang":"en","groupConsent":true,"cookieDocs":true}},"services":{"default":{"id":"default","services":[{"key":"base","type":"default","name":"Required cookies","info":{"value":"\u003Ctable\u003E\r\n\t\u003Cthead\u003E\r\n\t\t\u003Ctr\u003E\r\n\t\t\t\u003Cth width=\u002215%\u0022\u003ECookie name\u003C\/th\u003E\r\n\t\t\t\u003Cth width=\u002215%\u0022\u003EDefault expiration time\u003C\/th\u003E\r\n\t\t\t\u003Cth\u003EDescription\u003C\/th\u003E\r\n\t\t\u003C\/tr\u003E\r\n\t\u003C\/thead\u003E\r\n\t\u003Ctbody\u003E\r\n\t\t\u003Ctr\u003E\r\n\t\t\t\u003Ctd\u003E\u003Ccode dir=\u0022ltr\u0022 translate=\u0022no\u0022\u003ESSESS\u0026lt;ID\u0026gt;\u003C\/code\u003E\u003C\/td\u003E\r\n\t\t\t\u003Ctd\u003E1 month\u003C\/td\u003E\r\n\t\t\t\u003Ctd\u003EIf you are logged in to this website, a session cookie is required to identify and connect your browser to your user account in the server backend of this website.\u003C\/td\u003E\r\n\t\t\u003C\/tr\u003E\r\n\t\t\u003Ctr\u003E\r\n\t\t\t\u003Ctd\u003E\u003Ccode dir=\u0022ltr\u0022 translate=\u0022no\u0022\u003Ecookiesjsr\u003C\/code\u003E\u003C\/td\u003E\r\n\t\t\t\u003Ctd\u003E1 year\u003C\/td\u003E\r\n\t\t\t\u003Ctd\u003EWhen you visited this website for the first time, you were asked for your permission to use several services (including those from third parties) that require data to be saved in your browser (cookies, local storage). Your decisions about each service (allow, deny) are stored in this cookie and are reused each time you visit this website.\u003C\/td\u003E\r\n\t\t\u003C\/tr\u003E\r\n\t\u003C\/tbody\u003E\r\n\u003C\/table\u003E\r\n","format":"full_html"},"uri":"","needConsent":false}],"weight":1},"tracking":{"id":"tracking","services":[{"key":"analytics","type":"tracking","name":"Google Analytics","info":{"value":"","format":"full_html"},"uri":"https:\/\/support.google.com\/analytics\/answer\/6004245","needConsent":true}],"weight":10}},"translation":{"_core":{"default_config_hash":"r0JMDv27tTPrhzD4ypdLS0Jijl0-ccTUdlBkqvbAa8A"},"langcode":"en","bannerText":"This website uses cookies.\r\nSelect \u0022ACCEPT ALL\u0022 to consent to the use of all cookies. More options can be found under \u0022Cookie Settings\u0022.","privacyPolicy":"Privacy policy","privacyUri":"","imprint":"Imprint","imprintUri":"","cookieDocs":"Cookie documentation","cookieDocsUri":"\/cookies\/documentation","denyAll":"Deny all","alwaysActive":"Always active","settings":"Cookie settings","acceptAll":"Accept all","allowAll":"Accept all","requiredCookies":"Required cookies","cookieSettings":"Cookie settings","close":"Close","officialWebsite":"View official website","readMore":"Read more","allowed":"allowed","denied":"denied","settingsAllServices":"Settings for all services","saveSettings":"Save","default_langcode":"en","credit":"","default":{"title":"Cookies","details":"Cookies are small text files that are placed by your browser on your device in order to store certain information. \r\n\r\nThis website uses essential cookies to provide an authenticated experience for content contributors and uses tracking cookies to collect statistics to help us analyse site effectiveness and reach."},"tracking":{"title":"Tracking cookies","details":"We use tracking cookies to collect statistics on site use in order to understand site effectiveness and improve future services."}}},"user":{"uid":0,"permissionsHash":"879a19f7dbd38c655e8554de8cf5b41827848871fbd1c2af91faa9570271902a"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=9.4.7"></script>
+<script src="/core/misc/drupal.js?v=9.4.7"></script>
+<script src="/core/misc/drupal.init.js?v=9.4.7"></script>
+<script src="/modules/contrib/google_analytics/js/google_analytics.js?v=9.4.7"></script>
+<script src="/themes/custom/inform_base/assets/js/bootstrap.js?v=9.4.7"></script>
+<script src="/themes/custom/inform_base/assets/js/jquery-social-share-bar.js?v=9.4.7"></script>
+<script src="/themes/custom/inform_base/assets/js/inform_base.script.js?v=9.4.7"></script>
+<script src="/themes/custom/inform_base/assets/js/inform_mmenu.script.js?rzgqp7"></script>
+<script src="/modules/contrib/cookies/modules/cookies_ga/js/cookies_ga.js?v=9.4.7"></script>
+<script src="/core/misc/debounce.js?v=9.4.7"></script>
+<script src="/core/misc/announce.js?v=9.4.7"></script>
+<script src="/core/misc/message.js?v=9.4.7"></script>
+<script src="/modules/contrib/cookies/js/cookiesjsr.conf.js?v=9.4.7"></script>
+<script src="https://cdn.jsdelivr.net/gh/jfeltkamp/cookiesjsr@1/dist/cookiesjsr-preloader.min.js" defer></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"806919357cad487c","version":"2023.8.0","b":1,"token":"90edccd6c1fd43b79bb24844081f5e7c","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
