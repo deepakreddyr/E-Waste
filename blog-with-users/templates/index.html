@@ -39,16 +39,6 @@
             margin-top: 10px;
         }
     </style>
-
-
-
-    <!-- <div style="width: 50%;margin-left: auto;margin-right: 10%;border-radius: 5%;margin-top: 9.5%;margin-bottom: 4%;" id="map"></div> -->
-    <!-- <input  style="border-radius: 30%;" type="text" id="location-search" placeholder="Enter a destination"> -->
-    <!-- <input class="form-control col-lg-4" style="float: left;top: -15px;margin-left: 5%;margin-right: 1%;margin-bottom: 10%;" type="search" placeholder="Search" aria-label="Search" id="location-search">
-    <br>
-    <br>
-    <br> -->
-   
     
     <style>
         #map {
@@ -85,38 +75,6 @@
             document.body.insertBefore(searchButton, document.getElementById('map').nextSibling);
             
 
-//             function geocodeAndSearch(map, location) {
-//     const geocoder = new google.maps.Geocoder();
-//     geocoder.geocode({ 'address': location }, function (results, status) {
-//         if (status === 'OK' && results[0].geometry) {
-//             const locationLatLng = results[0].geometry.location;
-//             map.setCenter(locationLatLng);
-
-//             // Clear existing markers before adding new ones
-//             clearMarkers();
-
-//             // Perform a nearby search for hotels, schools, and e-waste recycling facilities
-//             const service = new google.maps.places.PlacesService(map);
-//             const request = {
-//                 location: locationLatLng,
-//                 radius: 5000, // Search radius in meters (adjust as needed)
-//                 keyword: ['hotel', 'school', 'e-waste recycling facility']
-//             };
-
-//             service.nearbySearch(request, function (results, status) {
-//               // clearMarkers();
-//                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-//                     for (let i = 0; i < results.length; i++) {
-//                         createMarker(results[i]);
-//                     }
-//                 }
-//             });
-//         } else {
-//             alert('Geocode was not successful for the following reason: ' + status);
-//         }
-//     });
-// }
-
             function geocodeAndSearch(map, location) {
               
                 const geocoder = new google.maps.Geocoder();
@@ -147,12 +105,6 @@
                 });
             }
 
-//             function clearMarkers() {
-//     for (let i = 0; i < markers.length; i++) {
-//         markers[i].setMap(null);
-//     }
-//     markers = []; // Clear the markers array
-// }
 
             function createMarker(place) {
                 const marker = new google.maps.Marker({
@@ -164,58 +116,18 @@
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCnlaK4k4I-9EfMocJPFPhk1kciB4UsD0&libraries=places&callback=initMap" async defer></script>
-
-    <!-- <script>
-        function initMap() {
-          const geocoder = new google.maps.Geocoder();
-            const searchInput = document.getElementById('location-search');
-            const searchButton = document.createElement('button');
-            searchButton.textContent = 'Search';
-            searchButton.addEventListener('click', function () {
-                const location = searchInput.value;
-                geocodeAddress(geocoder, map, location);
-            });
-
-            
-
-                const map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 13.117031220843776, lng: 77.63459033866121 }, // Default center (change to your desired location)
-                zoom: 14 // Default zoom level
-            });
-
-            document.body.insertBefore(searchButton, document.getElementById('map').nextSibling);
-
-            function geocodeAddress(geocoder, map, location) {
-                geocoder.geocode({ 'address': location }, function (results, status) {
-                    if (status === 'OK') {
-                        map.setCenter(results[0].geometry.location);
-                        const marker = new google.maps.Marker({
-                            map: map,
-                            position: results[0].geometry.location
-                        });
-                    } else {
-                        alert('Geocode was not successful for the following reason: ' + status);
-                    }
-                });
-            }
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCnlaK4k4I-9EfMocJPFPhk1kciB4UsD0&callback=initMap" async defer></script> -->
-
-      <!-- Pager-->
-      <!-- <div class="d-flex justify-content-end mb-4">
-        <a class="btn btn-secondary text-uppercase" href="#!">Older Posts →</a>
-      </div> -->
     </div>
   </div>
 </div>
 
-
+<hr>
+<br>
+<br>
     <!-- Add the Bootstrap CSS link -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <div class="container mt-4">
-      <h1>Select Equipment</h1>
+      <h1>Select Your <span style="color: green;">E-Waste</span></h1>
       <form action="" method="post">
           {{ form.hidden_tag() }}
           <div class="form-group">
@@ -225,182 +137,59 @@
           <button type="submit">Submit</button>
       </form>
         </div>
-    <div class="container mt-4">
-        <div class="form-group">
-            <label id="down" for="equipment-dropdown" style="font-size: xx-large;margin: 0%;">Select an item:</label>
-            <select class="form-control" id="equipment-dropdown">
-                <option value="item1">Central Heating (household installed)</option>
-                <option value="item2">Photovoltaic Panels (ind. inverters)</option>
-                <option value="item3">Professional Heating & Ventilation (excl. cooling equipment)</option>
-                <option value="item4">Dishwashers</option>
-                <option value="item5">Kitchen equipment (e.g. large furnaces, ovens, cooking equipment)</option>
-                <option value="item6">Washing Machines (ind, combined dryers)</option>
-                <option value="item7">Dryers (wash dryers, centrifuges)</option>
-                <option value="item8">Household Heating & Ventilation (e.g., hoods, ventilators, space heaters)</option>
-                <option value="item9">Fridges (incl. combi fridges)</option>
-                <option value="item10">Freezers</option>
-                <option value="item11">Air Conditioners (household installed and portable)</option>
-                <option value="item12">Other cooling equipment (e.g., dehumidifiers, heat pump dryers)</option>
-                <option value="item13">Professional cooling equipment (e.g., large air conditioners, cooling displays)</option>
-                <option value="item14">Microwaves (incl. combined ex. grills)</option>
-                <option value="item15">Other small household equipment (e.g., small ventilators, irons, clocks, adapters)</option>
-                <option value="item16">Equipment for food preparation (e.g., toaster, grills, food processing, frying pans)</option>
-                <option value="item17">Small household equipment for hot water preparation (e.g., coffee, tea, water cookers)</option>
-                <option value="item18">Vacuum Cleaners (exc. professional)</option>
-                <option value="item19">Personal Care equipment (e.g., toothbrushes, hairdryers, razors)</option>
-                <option value="item20">Small IT equipment (e.g., routers, mice, keyboards, external drives & accessories)</option>
-                <option value="item21">Desktop PCs (excl monitors, accessories)</option>
-                <option value="item22">Laptops (incl. tablets)</option>
-                <option value="item23">Printers (e.g. scanners, multi-functionals, faxes)</option>
-                <option value="item24">Telecommunication equipment (e.g. cordless phones, answering machines)</option>
-                <option value="item25">Mobile Phones (ind, smartphones, pagers)</option>
-                <option value="item26">Professional IT equipment (e.g. servers, routers, data storage, copiers)</option>
-                <option value="item27">Cathode Ray Tube Monitors</option>
-                <option value="item28">Flat Display Panel Monitors (LCD, LED)</option>
-                <option value="item29">Small Consumer Electronics (e.g., headphones, remote controls)</option>
-                <option value="item30">Portable Audio & Video (e.g. MP3, e-readers, car navigation)</option>
-                <option value="item31">Music Instruments, Radio, Hi-Fi (incl. audio sets)</option>
-                <option value="item32">Video (e.g. Video recorders, DVD, Blue Ray, set-top boxes) and projectors</option>
-                <option value="item33">Speakers</option>
-                <option value="item34">Cameras (e.g., camcorders, photo & digital still cameras)</option>
-                <option value="item35">Cathode Ray Tube TV's</option>
-                <option value="item36">Flat Display Panel TVs (LCD, LED, Plasma)</option>
-                <option value="item37">Small lighting equipment (excl. LED & incandescent)</option>
-                <option value="item38">Compact Fluorescent Lamps (ind retrofit & non-retrofit)</option>
-                <option value="item39">Straight Tube Fluorescent Lamps</option>
-                <option value="item40">Special Lamps (e.g. professional mercury high & low-pressure sodium)</option>
-                <option value="item41">LED Lamps (incl retrofit LED lamps)</option>
-                <option value="item42">Household Luminaires (ind, household incandescent fittings & household LED Luminaires)</option>
-                <option value="item43">Professional Luminaires (offices public space, industry)</option>
-                <option value="item44">Professional Luminaires (offices, public space, industry)</option>
-                <option value="item45">Household Tools (e.g., drills, saws, high-pressure cleaners, lawn mowers)</option>
-                <option value="item46">Professional Tools (e.g., for welding, soldering, milling)</option>
-                <option value="item47">Toys (e.g., car racing sets, electric trains, music toys, biking computers, drones)</option>
-                <option value="item48">Game Consoles</option>
-                <option value="item49">Leisure equipment (e.g. sports equipment, electric bikes, jukeboxes)</option>
-                <option value="item50">Household medical equipment (e.g. thermometers, blood pressure meters)</option>
-                <option value="item51">Professional medical equipment (e.g. hospital, dentist, diagnostics)</option>
-                <option value="item52">Household Monitoring & Control equipment (alarm, heat, smoke, excl screens)</option>
-                <option value="item53">Professional Monitoring & Control equipment (e.g. laboratory, control panel)</option>
-                <option value="item54">Non-cooled Dispensers (e.g. for vending, hot drinks, tickets, money)</option>
-                <option value="item55">Cooled Dispensers (e.g. for vending, cold drinks)</option>
-            </select>
-        </div>
-
+        <br>
+        <br>
+<hr style="margin-bottom: 5%;">
         <!-- Rest of your HTML content -->
-
+        
     </div>
-
-    <!-- <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown button
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-    </div> -->
-    <!-- Include Bootstrap JS and jQuery if needed -->
-    <!-- Bootstrap JS and jQuery are not required for styling the dropdown but may be needed for other Bootstrap features -->
-    <!-- You may need to adjust the paths to the JS files as well -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <h1 style="text-align: center;margin-top: 5%;">Got some E-waste? Here’s what you can do…
+    <h1 style="text-align: center;margin-top: 5%;">Got some <span style="color: green;">E-Waste</span>? Here’s what you can do…
     </h1>
     <div class="card-deck" style="margin: 5%;">
       <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <!-- <img class="card-img-top" src="C:\Users\chirag\Desktop\hackathon\E-Waste-main\blog-with-users\static\assets\img"  alt="Card image cap"> -->
         <div class="card-body">
-          <h5 class="card-title">Step 1:</h5>
-          <p class="card-text"> Choose your available E-Waste from the dropdown.</p>
+          <h4 class="card-title" style="font-size: 150%;">Step 1:</h4>
+          <p class="card-text" style="font-size: 180%;margin-top: 10%;"> Choose your available E-Waste from the dropdown.</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <!-- <img class="card-img-top" src="{{url_for('static',filename='/img/secondf.jpg')}}"  alt="Card image cap"> -->
+        
         <div class="card-body">
-          <h5 class="card-title">Step 2:</h5>
-          <p class="card-text">Discover your nearest E-waste facility or collaborated outlets at your fingertips!
+          <h5 class="card-title" style="font-size: 150%;">Step 2:</h5>
+          <p class="card-text" style="font-size: 180%;margin-top: 10%;">Discover your nearest E-waste facility or collaborated outlets at your fingertips!
           </p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
       <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <!-- <img class="card-img-top" src="{{url_for('static',filename='/img/thirf.jpg')}}" alt="Card image cap"> -->
         <div class="card-body">
-          <h5 class="card-title">Step 3:</h5>
-          <p class="card-text">Claim your rewards after responsibly disposing your E-Waste and add-on to your E-Score.</p>
+          <h5 class="card-title" style="font-size: 150%;">Step 3:</h5>
+          <p class="card-text" style="font-size: 180%;margin-top: 10%;">Claim your rewards after responsibly disposing your E-Waste and add-on to your E-Score.</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
     </div>
-    <!-- <label for="equipment-dropdown">Select an item:</label>
-    <select id="equipment-dropdown">
-        <option value="item1">Central Heating (household installed)</option>
-        <option value="item2">Photovoltaic Panels (ind. inverters)</option>
-        <option value="item3">Professional Heating & Ventilation (excl. cooling equipment)</option>
-        <option value="item4">Dishwashers</option>
-        <option value="item5">Kitchen equipment (e.g. large furnaces, ovens, cooking equipment)</option>
-        <option value="item6">Washing Machines (ind, combined dryers)</option>
-        <option value="item7">Dryers (wash dryers, centrifuges)</option>
-        <option value="item8">Household Heating & Ventilation (e.g., hoods, ventilators, space heaters)</option>
-        <option value="item9">Fridges (incl. combi fridges)</option>
-        <option value="item10">Freezers</option>
-        <option value="item11">Air Conditioners (household installed and portable)</option>
-        <option value="item12">Other cooling equipment (e.g., dehumidifiers, heat pump dryers)</option>
-        <option value="item13">Professional cooling equipment (e.g., large air conditioners, cooling displays)</option>
-        <option value="item14">Microwaves (incl. combined ex. grills)</option>
-        <option value="item15">Other small household equipment (e.g., small ventilators, irons, clocks, adapters)</option>
-        <option value="item16">Equipment for food preparation (e.g., toaster, grills, food processing, frying pans)</option>
-        <option value="item17">Small household equipment for hot water preparation (e.g., coffee, tea, water cookers)</option>
-        <option value="item18">Vacuum Cleaners (exc. professional)</option>
-        <option value="item19">Personal Care equipment (e.g., toothbrushes, hairdryers, razors)</option>
-        <option value="item20">Small IT equipment (e.g., routers, mice, keyboards, external drives & accessories)</option>
-        <option value="item21">Desktop PCs (excl monitors, accessories)</option>
-        <option value="item22">Laptops (incl. tablets)</option>
-        <option value="item23">Printers (e.g. scanners, multi-functionals, faxes)</option>
-        <option value="item24">Telecommunication equipment (e.g. cordless phones, answering machines)</option>
-        <option value="item25">Mobile Phones (ind, smartphones, pagers)</option>
-        <option value="item26">Professional IT equipment (e.g. servers, routers, data storage, copiers)</option>
-        <option value="item27">Cathode Ray Tube Monitors</option>
-        <option value="item28">Flat Display Panel Monitors (LCD, LED)</option>
-        <option value="item29">Small Consumer Electronics (e.g., headphones, remote controls)</option>
-        <option value="item30">Portable Audio & Video (e.g. MP3, e-readers, car navigation)</option>
-        <option value="item31">Music Instruments, Radio, Hi-Fi (incl. audio sets)</option>
-        <option value="item32">Video (e.g. Video recorders, DVD, Blue Ray, set-top boxes) and projectors</option>
-        <option value="item33">Speakers</option>
-        <option value="item34">Cameras (e.g., camcorders, photo & digital still cameras)</option>
-        <option value="item35">Cathode Ray Tube TV's</option>
-        <option value="item36">Flat Display Panel TVs (LCD, LED, Plasma)</option>
-        <option value="item37">Small lighting equipment (excl. LED & incandescent)</option>
-        <option value="item38">Compact Fluorescent Lamps (ind retrofit & non-retrofit)</option>
-        <option value="item39">Straight Tube Fluorescent Lamps</option>
-        <option value="item40">Special Lamps (e.g. professional mercury high & low-pressure sodium)</option>
-        <option value="item41">LED Lamps (incl retrofit LED lamps)</option>
-        <option value="item42">Household Luminaires (ind, household incandescent fittings & household LED Luminaires)</option>
-        <option value="item43">Professional Luminaires (offices public space, industry)</option>
-        <option value="item44">Professional Luminaires (offices, public space, industry)</option>
-        <option value="item45">Household Tools (e.g., drills, saws, high-pressure cleaners, lawn mowers)</option>
-        <option value="item46">Professional Tools (e.g., for welding, soldering, milling)</option>
-        <option value="item47">Toys (e.g., car racing sets, electric trains, music toys, biking computers, drones)</option>
-        <option value="item48">Game Consoles</option>
-        <option value="item49">Leisure equipment (e.g. sports equipment, electric bikes, jukeboxes)</option>
-        <option value="item50">Household medical equipment (e.g. thermometers, blood pressure meters)</option>
-        <option value="item51">Professional medical equipment (e.g. hospital, dentist, diagnostics)</option>
-        <option value="item52">Household Monitoring & Control equipment (alarm, heat, smoke, excl screens)</option>
-        <option value="item53">Professional Monitoring & Control equipment (e.g. laboratory, control panel)</option>
-        <option value="item54">Non-cooled Dispensers (e.g. for vending, hot drinks, tickets, money)</option>
-        <option value="item55">Cooled Dispensers (e.g. for vending, cold drinks)</option>
-        <option value="item56">Others</option>
-
-    </select> -->
-
-    <!-- Rest of your HTML content -->
+    <hr>
+    <br>
+    <br>
+    <h1 style="text-align: center;">Enter the <span style="color: green;">E-Code</span> to redeem your E-Score</h1>
+    <h1 style="float: right;margin-right: 20%;margin-top: 5%;"><span style="color: green;">4350</span> is YOUR E-SCORE</h1>
+    
+    <input class="form-control col-lg-4" style="margin-left: 5%;margin-bottom: 2%;margin-top: 5%;" type="search" placeholder="Enter the code here" aria-label="Search" >
+    <button type="submit" style="margin-left: 5%;">Submit</button>
+<br>
+<br>
+<br>
+<br>
 
 
-
-    {% include "footer.html" %}
-    {% endblock %}
+{% include "footer.html" %}
+{% endblock %}
