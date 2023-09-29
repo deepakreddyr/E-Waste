@@ -1,21 +1,21 @@
 from datetime import date
-from flask import Flask, abort, render_template, redirect, url_for, flash
+from flask import Flask, abort, render_template, redirect, url_for, flash,request
 from flask_bootstrap import Bootstrap5
-from flask_ckeditor import CKEditor
-from flask_gravatar import Gravatar
+# from flask_ckeditor import CKEditor
+# from flask_gravatar import Gravatar
 from flask_login import UserMixin, login_user, LoginManager, current_user, logout_user
 from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy.orm import relationship
 
-from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
+from forms import  RegisterForm, LoginForm
 
 
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
-ckeditor = CKEditor(app)
+# ckeditor = CKEditor(app)
 Bootstrap5(app)
 
 # Configure Flask-Login
@@ -23,42 +23,139 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 
+equip_dict={
+        'Central Heating ( household installed )':5000,
+       'Photovoltaic Panels ( ind . inverters )':5000,
+       'Professional Heating & Ventilation ( excl . cooling equipment )':5000,
+       'Dishwashers':5000,
+       'Kitchen equipment ( eg . large furnaces , ovens , cooking equipment )':5000,
+       'Washing Machines ( ind , combined dryers )':5000,
+       'Dryers ( wash dryers , centrifuges )':5000,
+       'Household Heating & Ventilation ( eg , hoods , ventilators , space heaters )':5000,
+       'Fridges ( incl . combi Indges )':5000, 'Freezers':5000,
+       'Air Conditioners ( household installed and portable )':5000,
+       'Other cooling equipment ( eg , dehumidifiers , heat pump dryers )':5000,
+       'Professional cooling equipment\n( eg , large air conditioners , cooling displays )':5000,
+       'Microwaves ( inc , combined ex . grils )':2000,
+       'Other small household equipment\n( e.g. small ventilators , irons , clocks , adapters )':2000,
+       'Equipment for food preparation\n( e.g. toaster , grills , food processing , frying pans )':2000,
+       'Small household equipment for hot water preparation\n( eg , coffee , tea , water cookers )':2000,
+       'Vacuum Cleaners ( exc . professional )':2000,
+       'Personal Care equipment ( eg toothbrushes , hairdryers , razors )':2000,
+       'Small IT equipment\n( eg , routers , mice , keyboards , external drives & accessories )':1000,
+       'Desktop PCs ( excl monitors , accessories )':1000,
+       'Laptops ( incl . tablets )':1000,
+       'Printers ( e.g. scanners , multi - functionals , faxes )':1000,
+       'Telecommunication equipment ( e.g. cordless phones , answering machines )':1000,
+       'Mobile Phones ( ind , smartphones , pagers )':1000,
+       'Professional IT equipment ( e.g. servers , routers , data storage , copiers )':1000,
+       'Cathode Ray Tube Monitors':500,
+       'Fat Display Panel Monitors ( LCD , LED )':750,
+       'Small Consumer Electronics ( eg , headphones , remote controls )':150,
+       'Portable Audio & Video ( eg MP3 , e - readers , carnavigation )':150,
+       'Music Instruments , Radio , Hi - Fi ( incl . audio sets )':150,
+       'Video ( eg Video recorders , DVD , Blue Ray , set - top boxes ) and projectors':1500,
+       'Speakers':500,
+       'Cameras ( eg , camcorders , photo & digital still cameras )':1000,
+       "Cathode Ray Tube TV's":250,
+       'Flat Display Panel TVs ( LCD , LED , Plasma )':800,
+       'Small lighting equipment ( exd . LED & incandescent )':50,
+       'Compact Fluorescent Lamps ( ind retrofit & non - retrofit )':50,
+       'Straight Tube Fluorescent Lamps':50,
+       'Special Lamps ( eg professional mercury high & low pressure sodium )':50,
+       'LED Lamps ( incl retrofit LED lamps )':70,
+       'Household Luminaires ( ind , household incandescent fittings & household LED\nLuminaires )':50,
+       'Professional Luminaires ( offices public space , industry )':70,
+       'Professional Luminaires ( offices , public space , industry )':70,
+       'Household Tools ( eg , drils , saws , high pressure cleaners , lawn mowers )':700,
+       'Professional Tools ( eg , for welding , soldering , miling )':700,
+       'Toys ( eg , car racing sets , electric trains , music toys .\nbiking computers , drones )':0,
+       'Game Consoles':500,
+       'Leisure equipment ( eg sports equipment , electric bikes , juke boxes )':4500,
+       'Household medical equipment\n( eg thermometers , blood pressure meters )':50,
+       'Professional medical equipment ( e.g. hospital , dentist , diagnostics )':5000,
+       'Household Monitoring & Control equipment\n( alarm , heat , smoke , excl screens )':75,
+       'Professional Monitoring & Control equipment\n( eg , laboratory , control panel )':500,
+}
+
+
+from flask_wtf import FlaskForm
+from wtforms import SelectField
+
+class EquipmentForm(FlaskForm):
+    equipment = SelectField('Select an item', choices=[
+        ('item1', 'Central Heating (household installed)'),
+        ('item2', 'Photovoltaic Panels (ind. inverters)'),
+        ("item3", "Professional Heating & Ventilation (excl. cooling equipment)"),
+        ("item4", "Dishwashers"),
+        ("item5", "Kitchen equipment (e.g. large furnaces, ovens, cooking equipment)"),
+        ("item6", "Washing Machines (ind, combined dryers)"),
+        ("item7", "Dryers (wash dryers, centrifuges)"),
+        ("item8", "Household Heating & Ventilation (e.g., hoods, ventilators, space heaters)"),
+        ("item9", "Fridges (incl. combi fridges)"),
+        ("item10", "Freezers"),
+        ("item11", "Air Conditioners (household installed and portable)"),
+        ("item12", "Other cooling equipment (e.g., dehumidifiers, heat pump dryers)"),
+        ("item13", "Professional cooling equipment (e.g., large air conditioners, cooling displays)"),
+        ("item14", "Microwaves (incl. combined ex. grills)"),
+        ("item15", "Other small household equipment (e.g., small ventilators, irons, clocks, adapters)"),
+        ("item16", "Equipment for food preparation (e.g., toaster, grills, food processing, frying pans)"),
+        ("item17", "Small household equipment for hot water preparation (e.g., coffee, tea, water cookers)"),
+        ("item18", "Vacuum Cleaners (exc. professional)"),
+        ("item19", "Personal Care equipment (e.g., toothbrushes, hairdryers, razors)"),
+        ("item20", "Small IT equipment (e.g., routers, mice, keyboards, external drives & accessories)"),
+        ("item21", "Desktop PCs (excl monitors, accessories)"),
+        ("item22", "Laptops (incl. tablets)"),
+        ("item23", "Printers (e.g. scanners, multi-functionals, faxes)"),
+        ("item24", "Telecommunication equipment (e.g. cordless phones, answering machines)"),
+        ("item25", "Mobile Phones (ind, smartphones, pagers)"),
+        ("item26", "Professional IT equipment (e.g. servers, routers, data storage, copiers)"),
+        ("item27", "Cathode Ray Tube Monitors"),
+        ("item28", "Flat Display Panel Monitors (LCD, LED)"),
+        ("item29", "Small Consumer Electronics (e.g., headphones, remote controls)"),
+        ("item30", "Portable Audio & Video (e.g. MP3, e-readers, car navigation)"),
+        ("item31", "Music Instruments, Radio, Hi-Fi (incl. audio sets)"),
+        ("item32", "Video (e.g. Video recorders, DVD, Blue Ray, set-top boxes) and projectors"),
+        ("item33", "Speakers"),
+        ("item34", "Cameras (e.g., camcorders, photo & digital still cameras)"),
+        ("item35", "Cathode Ray Tube TV's"),
+        ("item36", "Flat Display Panel TVs (LCD, LED, Plasma)"),
+        ("item37", "Small lighting equipment (excl. LED & incandescent)"),
+        ("item38", "Compact Fluorescent Lamps (ind retrofit & non-retrofit)"),
+        ("item39", "Straight Tube Fluorescent Lamps"),
+        ("item40", "Special Lamps (e.g. professional mercury high & low-pressure sodium)"),
+        ("item41", "LED Lamps (incl retrofit LED lamps)"),
+        ("item42", "Household Luminaires (ind, household incandescent fittings & household LED Luminaires)"),
+        ("item43", "Professional Luminaires (offices public space, industry)"),
+        ("item44", "Professional Luminaires (offices, public space, industry)"),
+        ("item45", "Household Tools (e.g., drills, saws, high-pressure cleaners, lawn mowers)"),
+        ("item46", "Professional Tools (e.g., for welding, soldering, milling)"),
+        ("item47", "Toys (e.g., car racing sets, electric trains, music toys, biking computers, drones)"),
+        ("item48", "Game Consoles"),
+        ("item49", "Leisure equipment (e.g. sports equipment, electric bikes, jukeboxes)"),
+        ("item50", "Household medical equipment (e.g. thermometers, blood pressure meters)"),
+        ("item51", "Professional medical equipment (e.g. hospital, dentist, diagnostics)"),
+        ("item52", "Household Monitoring & Control equipment (alarm, heat, smoke, excl screens)"),
+        ("item53", "Professional Monitoring & Control equipment (e.g. laboratory, control panel)"),
+        ("item54", "Non-cooled Dispensers (e.g. for vending, hot drinks, tickets, money)"),
+        ("item55", "Cooled Dispensers (e.g. for vending, cold drinks)")
+    ])
+    
+
 @login_manager.user_loader
 def load_user(user_id):
     return db.get_or_404(User, user_id)
 
 
 # For adding profile images to the comment section
-gravatar = Gravatar(app,
-                    size=100,
-                    rating='g',
-                    default='retro',
-                    force_default=False,
-                    force_lower=False,
-                    use_ssl=False,
-                    base_url=None)
+
 
 # CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///E-Waste.db'
 db = SQLAlchemy()
 db.init_app(app)
 
 
-# CONFIGURE TABLES
-class BlogPost(db.Model):
-    __tablename__ = "blog_posts"
-    id = db.Column(db.Integer, primary_key=True)
-    # Create Foreign Key, "users.id" the users refers to the tablename of User.
-    author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    # Create reference to the User object. The "posts" refers to the posts property in the User class.
-    author = relationship("User", back_populates="posts")
-    title = db.Column(db.String(250), unique=True, nullable=False)
-    subtitle = db.Column(db.String(250), nullable=False)
-    date = db.Column(db.String(250), nullable=False)
-    body = db.Column(db.Text, nullable=False)
-    img_url = db.Column(db.String(250), nullable=False)
-    # Parent relationship to the comments
-    comments = relationship("Comment", back_populates="parent_post")
 
 
 # Create a User table for all your registered users
@@ -68,25 +165,8 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
     name = db.Column(db.String(100))
-    # This will act like a list of BlogPost objects attached to each User.
-    # The "author" refers to the author property in the BlogPost class.
-    posts = relationship("BlogPost", back_populates="author")
-    # Parent relationship: "comment_author" refers to the comment_author property in the Comment class.
-    comments = relationship("Comment", back_populates="comment_author")
+    reward=db.Column(db.Integer, default=0)
 
-
-# Create a table for the comments on the blog posts
-class Comment(db.Model):
-    __tablename__ = "comments"
-    id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.Text, nullable=False)
-    # Child relationship:"users.id" The users refers to the tablename of the User class.
-    # "comments" refers to the comments property in the User class.
-    author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    comment_author = relationship("User", back_populates="comments")
-    # Child Relationship to the BlogPosts
-    post_id = db.Column(db.Integer, db.ForeignKey("blog_posts.id"))
-    parent_post = relationship("BlogPost", back_populates="comments")
 
 
 with app.app_context():
@@ -127,7 +207,7 @@ def register():
         db.session.add(new_user)
         db.session.commit()
         login_user(new_user)
-        return redirect(url_for("get_all_posts"))
+        return redirect(url_for("get_reward"))
     return render_template("register.html", form=form, current_user=current_user)
 
 
@@ -146,7 +226,7 @@ def login():
             return redirect(url_for('login'))
         else:
             login_user(user)
-            return redirect(url_for('get_all_posts'))
+            return redirect(url_for('get_reward'))
 
     return render_template("login.html", form=form, current_user=current_user)
 
@@ -154,83 +234,18 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('get_all_posts'))
+    return redirect(url_for('login'))
 
-
-@app.route('/')
-def get_all_posts():
-    result = db.session.execute(db.select(BlogPost))
-    posts = result.scalars().all()
-    return render_template("index.html", all_posts=posts, current_user=current_user)
-
-
-@app.route("/post/<int:post_id>", methods=["GET", "POST"])
-def show_post(post_id):
-    requested_post = db.get_or_404(BlogPost, post_id)
-    comment_form = CommentForm()
-    if comment_form.validate_on_submit():
-        if not current_user.is_authenticated:
-            flash("You need to login or register to comment.")
-            return redirect(url_for("login"))
-
-        new_comment = Comment(
-            text=comment_form.comment_text.data,
-            comment_author=current_user,
-            parent_post=requested_post
-        )
-        db.session.add(new_comment)
-        db.session.commit()
-    return render_template("post.html", post=requested_post, current_user=current_user, form=comment_form)
-
-
-@app.route("/new-post", methods=["GET", "POST"])
-@admin_only
-def add_new_post():
-    form = CreatePostForm()
+@app.route('/', methods=['GET', 'POST'])
+def get_reward():
+    form = EquipmentForm()
     if form.validate_on_submit():
-        new_post = BlogPost(
-            title=form.title.data,
-            subtitle=form.subtitle.data,
-            body=form.body.data,
-            img_url=form.img_url.data,
-            author=current_user,
-            date=date.today().strftime("%B %d, %Y")
-        )
-        db.session.add(new_post)
-        db.session.commit()
-        return redirect(url_for("get_all_posts"))
-    return render_template("make-post.html", form=form, current_user=current_user)
-
-
-@app.route("/edit-post/<int:post_id>", methods=["GET", "POST"])
-def edit_post(post_id):
-    post = db.get_or_404(BlogPost, post_id)
-    edit_form = CreatePostForm(
-        title=post.title,
-        subtitle=post.subtitle,
-        img_url=post.img_url,
-        author=post.author,
-        body=post.body
-    )
-    if edit_form.validate_on_submit():
-        post.title = edit_form.title.data
-        post.subtitle = edit_form.subtitle.data
-        post.img_url = edit_form.img_url.data
-        post.author = current_user
-        post.body = edit_form.body.data
-        db.session.commit()
-        return redirect(url_for("show_post", post_id=post.id))
-    return render_template("make-post.html", form=edit_form, is_edit=True, current_user=current_user)
-
-
-@app.route("/delete/<int:post_id>")
-@admin_only
-def delete_post(post_id):
-    post_to_delete = db.get_or_404(BlogPost, post_id)
-    db.session.delete(post_to_delete)
-    db.session.commit()
-    return redirect(url_for('get_all_posts'))
-
+        equipment_value = form.equipment.data
+        if equipment_value in equip_dict:
+            reward_points = equip_dict[reward_points]
+            current_user.reward += reward_points
+            db.session.commit()
+    return render_template("index.html", form=form, current_user=current_user)
 
 @app.route("/about")
 def about():
