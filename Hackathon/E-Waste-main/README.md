@@ -1,2 +1,0 @@
-# E-Waste
-A Project
